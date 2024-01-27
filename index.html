@@ -1,0 +1,181 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document</title><script defer="defer" src="main.js"></script></head><body><div style="display: flex;"><div class="card-container"><div class="title">球员详细信息</div><div class="info"><div class="avarta"><div class="box"><img id="avarta" width="100%" height="100%" style="object-fit: cover;"/></div></div><div class="weizhi-info"><div style="padding-bottom: 10px; border-bottom: 1px solid;" id="qiuyuanleix">SF|PF 三分射手</div><div><div class="name var-text" id="name">杰森.塔图姆</div></div><div class="people-info"><div class="item1 team"><lable>球队</lable><span class="var-text" id="team">波士顿凯尔特人</span></div><div class="item type"><lable>系列</lable><span class="var-text" id="type">现役</span></div><div class="item1 height"><lable>身高</lable><span class="var-text" id="height">203cm</span></div><div class="item bizhan"><lable>臂展</lable><span class="var-text" id="bizhan">210cm</span></div><div class="item1 tizhong"><lable>体重</lable><span class="var-text" id="tizhong">93kg</span></div><div class="item guanyongshou"><lable>惯用手</lable><span class="var-text" id="guanyongshou">右手</span></div><div class="item1 xuanxiu"><lable>选秀</lable><span class="var-text" id="xuanxiu">2017年第1轮第3顺位</span></div></div></div></div><div style="display: flex; padding: 0 20px; box-sizing: border-box;"><div style="width: 20%; text-align: center; padding: 10px 0; color: #d9b33a; border-bottom:2px solid #d9b33a;">综合</div><div style="width: 20%; text-align: center; padding: 10px 0;">属性</div><div style="width: 20%; text-align: center; padding: 10px 0;">徽章</div><div style="width: 20%; text-align: center; padding: 10px 0;">球员身价</div></div><div class="radarChart-content"><div class="nengli">能力</div><div class="num">96</div><div class="huizhang">徽章</div><div style="display: flex;margin-top: 10px;"><div style="position: relative; font-size: 12px;"><div class="hexagon1"></div><div style="position: absolute; left: 50%;top:50%; transform: translate(-50%,-50%);">2</div></div><div style="position: relative; font-size: 12px;"><div class="hexagon2"></div><div style="position: absolute; left: 50%;top:50%; transform: translate(-50%,-50%);">2</div></div><div style="position: relative; font-size: 12px;"><div class="hexagon3"></div><div style="position: absolute; left: 50%;top:50%; transform: translate(-50%,-50%);">0</div></div></div><div class="radarChart"><canvas id="main" width="500" height="500"></canvas></div></div></div><div class="control" style="margin-left: 400px; display: flex;"><form id="myForm"><div><div><label for="name" style="margin-right: 10px;">球员类型</label><input name="qiuyuanleix"/></div><div><label for="name" style="margin-right: 10px;">名字</label><input name="name"/></div><div><label for="name" style="margin-right: 10px;">球队</label><input name="team"/></div><div><label style="margin-right: 10px;">身高</label><input name="height"/></div><div><label style="margin-right: 10px;">臂展</label><input name="bizhan"/></div><div><label style="margin-right: 10px;">体重</label><input name="tizhong"/></div><div><label style="margin-right: 10px;">选秀</label><input name="xuanxiu"/></div><div><label style="margin-right: 10px;">惯用手</label><input name="guanyongshou"/></div><div><label style="margin-right: 10px;">铜徽章</label><input/></div><div><label style="margin-right: 10px;">银徽章</label><input/></div><div><label style="margin-right: 10px;">头像</label><input id="fileInput" type="file"/></div><button type="submit">提交</button></div></form><form id="myForm2"><div><div><label for="name" style="margin-right: 10px;">运动</label><input/></div><div><label for="name" style="margin-right: 10px;">上篮</label><input/></div><div><label for="name" style="margin-right: 10px;">扣篮</label><input/></div><div><label for="name" style="margin-right: 10px;">内线</label><input/></div><div><label for="name" style="margin-right: 10px;">中投</label><input/></div><div><label for="name" style="margin-right: 10px;">三分</label><input/></div><div><label for="name" style="margin-right: 10px;">组织</label><input/></div><div><label for="name" style="margin-right: 10px;">内防</label><input/></div><div><label for="name" style="margin-right: 10px;">外防</label><input/></div><div><label for="name" style="margin-right: 10px;">抢断</label><input/></div><div><label for="name" style="margin-right: 10px;">盖帽</label><input/></div><div><label for="name" style="margin-right: 10px;">篮板</label><input/></div><button type="submit">提交</button></div></form></div></div></body><style>.title {
+        width: 100%;
+        height: 50px;
+        font-size: 23px;
+        font-weight: bold;
+        color: #ececec;
+        background-color: #121212;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .card-container {
+        width: 700px;
+        position: relative;
+        box-sizing: border-box;
+        border: 1px solid;
+    }
+
+    .radarChart-content {
+        height: 500px;
+        padding: 50px;
+        box-sizing: border-box;
+        position: relative;
+
+        .nengli {
+            font-size: 20px;
+
+        }
+
+        .num {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .huizhang {
+            margin-top: 150px;
+        }
+    }
+
+    .radarChart {
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+    }
+
+    .info {
+        box-sizing: border-box;
+        background-color: #202020;
+        color: #545557;
+        display: flex;
+        font-weight: bold;
+        padding: 20px;
+
+        .var-text {
+            color: #ececec;
+        }
+    }
+
+    .avarta {
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+        }
+    }
+
+    .weizhi-info {
+        padding: 5px 40px;
+        flex: 1;
+
+        .name {
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+
+    .people-info {
+        display: flex;
+        flex-wrap: wrap;
+
+        lable {
+            margin-right: 10px;
+        }
+
+        .item {
+            margin-bottom: 5px;
+        }
+
+        .item1 {
+            margin-bottom: 5px;
+            width: 60%;
+        }
+    }
+
+    .hexagon1 {
+        width: 100px;
+        height: 55px;
+        position: relative;
+        background-color: #a08773;
+        margin: 27.5px 5px;
+        zoom: 0.3;
+    }
+
+    .hexagon1::before,
+    .hexagon1::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+    }
+
+    .hexagon1::before {
+        bottom: 100%;
+        border-bottom: 25px solid #a08773;
+    }
+
+    .hexagon1::after {
+        top: 100%;
+        width: 0;
+        border-top: 25px solid #a08773;
+    }
+
+    .hexagon2 {
+        width: 100px;
+        height: 55px;
+        position: relative;
+        background-color: #9ea4b1;
+        margin: 27.5px 5px;
+        zoom: 0.3;
+    }
+
+    .hexagon2::before,
+    .hexagon2::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+    }
+
+    .hexagon2::before {
+        bottom: 100%;
+        border-bottom: 25px solid #9ea4b1;
+    }
+
+    .hexagon2::after {
+        top: 100%;
+        width: 0;
+        border-top: 25px solid #9ea4b1;
+    }
+
+    .hexagon3 {
+        width: 100px;
+        height: 55px;
+        position: relative;
+        background-color: #203241;
+        margin: 27.5px 5px;
+        zoom: 0.3;
+    }
+
+    .hexagon3::before,
+    .hexagon3::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+    }
+
+    .hexagon3::before {
+        bottom: 100%;
+        border-bottom: 25px solid #203241;
+    }
+
+    .hexagon3::after {
+        top: 100%;
+        width: 0;
+        border-top: 25px solid #203241;
+    }</style></html>
